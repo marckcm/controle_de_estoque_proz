@@ -1,0 +1,25 @@
+{% extends 'estoque/base.html' %}
+
+{% block content %}
+<h2>Todas as Movimentações</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Material</th>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mov in movimentacoes %}
+        <tr>
+            <td>{{ mov.material.nome }}</td>
+            <td>{{ mov.tipo }}</td>
+            <td>{{ mov.quantidade }}</td>
+            <td>{{ mov.data }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
