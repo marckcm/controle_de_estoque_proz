@@ -1,0 +1,25 @@
+{% extends 'estoque/base.html' %}
+
+{% block content %}
+<h2>Lista de Materiais</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Validade</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for material in materiais %}
+        <tr>
+            <td>{{ material.nome }}</td>
+            <td>{{ material.quantidade }}</td>
+            <td>{{ material.validade }}</td>
+            <td><a href="{% url 'estoque:detalhe_material' material.pk %}" class="btn btn-sm btn-info">Ver</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
